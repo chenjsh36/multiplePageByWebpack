@@ -1,0 +1,34 @@
+{
+  "name": "multiplePageByWebpack",
+  "version": "1.0.0",
+  "description": "Webpack 构建多页面应用",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node npm-scripts/clean-before-build.js && webpack --progress --colors --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenjsh36/multiplePageByWebpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenjsh36/multiplePageByWebpack/issues"
+  },
+  "homepage": "https://github.com/chenjsh36/multiplePageByWebpack#readme",
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "expose-loader": "^0.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    transition: .2s all linear;
+    display: flex;
+}
+
+a, 
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: blue;
+}
