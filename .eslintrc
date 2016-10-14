@@ -14,6 +14,7 @@
     "jquery": true
   },
   "rules": {
+    "linebreak-style": 0, // 如果想启用的话这样设置：[1, "windows"] windows 的换行符为 CRLF(\r\n)， unix则为 LF(\r\n)
     "no-console": 0, //console 未删除
     "no-var": 0,
     "no-new": 0,
@@ -30,7 +31,7 @@
       "comments": 200,
       "ignoreComments": false,
       "ignoreTrailingComments": false,
-      "ignoreUrls": true
+      "ignoreUrls": true,
     }],
     "global-require": 0,
     "no-alert": 0,

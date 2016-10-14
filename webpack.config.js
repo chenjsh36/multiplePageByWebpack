@@ -5,5 +5,5 @@ module.exports = {
     output: require('./webpack-config/output.config.js'),
     module: require('./webpack-config/module.config.js'),
     plugins: require('./webpack-config/plugins.build.config.js'),
-    eslint: require('./webpack-config/vender/eslint.config.js')
+    // eslint: require('./webpack-config/vender/eslint.config.js')
 }

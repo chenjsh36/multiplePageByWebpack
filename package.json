@@ -5,7 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node npm-scripts/clean-before-build.js && webpack --progress --colors --bail"
+    "build": "node npm-scripts/clean-before-build.js && webpack --progress --colors --bail",
+    "dev": "node npm-scripts/before-build.script.js && webpack --progress --colors --config ./webpack.dev.config.js",
+    "dll": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dll.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,15 @@
   "homepage": "https://github.com/chenjsh36/multiplePageByWebpack#readme",
   "devDependencies": {
     "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "rimraf": "^2.5.4",
