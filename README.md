@@ -49,3 +49,13 @@ Webpack 构建多页面应用
 * CSS 浏览器兼容
 * 版本化代码
 
+## 安装
+默认 node 和 npm 已安装
+
+step1:
+
+> npm install webpack-dev-server
+
+step2:
+
+> npm install

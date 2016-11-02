@@ -6,8 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node npm-scripts/clean-before-build.js && webpack --progress --colors --bail",
-    "dev": "node npm-scripts/before-build.script.js && webpack --progress --colors --config ./webpack.dev.config.js",
-    "dll": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dll.config.js"
+    "dev": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dev.config.js",
+    "dll": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dll.config.js",
+    "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
+    "start": "webpack-dev-server --inline --progress --compress --devtool eval --content-base build/",
+    "display": "node npm-scripts/clean-before-build.js && webpack --progress --display --display-modules --colors --config ./webpack.dev.config.js",
+    "cp": "node npm-scripts/cp-dll.js"
   },
   "repository": {
     "type": "git",

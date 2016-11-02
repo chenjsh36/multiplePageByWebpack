@@ -1,6 +1,6 @@
 var dirVarsConfig = require('./base/dir-vars.config.js');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+console.log('dll:', dirVarsConfig.dllDir);
 var moduleConfig = {
         preLoaders: [
             {
@@ -31,11 +31,11 @@ var moduleConfig = {
                 include: dirVarsConfig.srcRootDir,
                 loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
             },
-            {
-                test: /\.html$/,
-                include: dirVarsConfig.srcRootDir,
-                loader: 'html',
-            },
+            // {
+            //     test: /\.html$/,
+            //     include: dirVarsConfig.srcRootDir,
+            //     loader: 'html',
+            // },
             {
                 // 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
                 // 如下配置，将小于8192byte的图片转成base64码
@@ -50,6 +50,12 @@ var moduleConfig = {
                 include: dirVarsConfig.srcRootDir,
                 loader: 'file?name=./static/fonts/[name].[ext]',
             },
+            {
+                // 专供 DLL 解决方案使用，将编译出来的 dll 文件原封不动的拷贝到 build 中去
+                test: /\.js/,
+                include: dirVarsConfig.dllDir,
+                loader: 'file'
+            }
         ]
     }
 
