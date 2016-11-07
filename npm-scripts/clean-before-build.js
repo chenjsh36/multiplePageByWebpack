@@ -7,11 +7,11 @@ rimraf(dirVars.buildDir, fs, function cb() {
 })
 
 
-function copy(src, dst) {
-	fs.writeFileSync(dst, fs.readFileSync(src));
-}
+// function copy(src, dst) {
+// 	fs.writeFileSync(dst, fs.readFileSync(src));
+// }
 
-var src = path.resolve(dirVars.dllDir, 'dll.js');
-var dist = path.resolve(dirVars.buildDir, 'dll/dll.js');
+// var src = path.resolve(dirVars.dllDir, 'dll.js');
+// var dist = path.resolve(dirVars.buildDir, 'dll/dll.js');
 
-copy(src, dist);
+// copy(src, dist);

@@ -18,6 +18,7 @@ var server = new WebpackDevServer(compiler, {
 	// Can also be an array, or: contentBase: "http://localhost/",
 	
 	hot: true,
+	inline: true,
 	// Enable special support for Hot Module Replacement
 	// Page is no longer updated, but a "webpackHotUpdate" message is sent to the content
 	// Use "webpack/hot/dev-server" as additional module in your entry point
@@ -56,17 +57,16 @@ var server = new WebpackDevServer(compiler, {
 	// webpack-dev-middleware options
 	// quiet: false,
 	// noInfo: false,
-	// lazy: true,
-	// filename: "bundle.js",
-	// watchOptions: {
-	// aggregateTimeout: 300,
-	// poll: 1000
-	// },
+	lazy: true,
+	filename: "bundle.js",
+	watchOptions: {
+	aggregateTimeout: 300,
+	poll: 1000
+	},
 	// It's a required option.
-	// publicPath: "/assets/",
+	publicPath: "/assets/",
 	// headers: { "X-Custom-Header": "yes" },
 	stats: { colors: true },
-
 	devtool: 'eval',
 
 });

@@ -17,5 +17,10 @@ a:visited {
 }
 
 body {
-	background-image: url('./imgs/timg.jpg');
+	background: url(./imgs/timg.jpg) no-repeat;
+}
+
+
+body {
+	background-color: #eee;
 }
