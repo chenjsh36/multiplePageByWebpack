@@ -7,8 +7,9 @@ var dllDir = dirVarsConfig.dllDir;
 
 var configEntry = {};
 pageArr.forEach((page) => {
-    configEntry[page] = path.resolve(pagesDir, page + '/main');
+    configEntry[page] = [path.resolve(pagesDir, page + '/main')];
 })
+// pageArr['webpack/hot/dev-server'] = ['webpack/hot/dev-server'];
 // dllArr.forEach((dll) => {
 // 	configEntry[dll] = path.resolve(dllDir, '/dll');
 // })

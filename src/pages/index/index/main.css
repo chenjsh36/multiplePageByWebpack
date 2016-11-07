@@ -11,3 +11,11 @@ a:visited {
     text-decoration: none;
     color: blue;
 }
+
+* {
+	color: #00ff00;
+}
+
+body {
+	background-image: url('./imgs/timg.jpg');
+}

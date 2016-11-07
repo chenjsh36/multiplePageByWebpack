@@ -42,7 +42,7 @@ var moduleConfig = {
                 // 由于使用了[hash]，因此即便是不同页面引用了相同名字但实际内容不同的图片，也不会造成“覆盖”的情况出现；进一步讲，如果不同页面引用了在不同位置但实际内容相同的图片，这还可以归并成一张图片，方便浏览器缓存呢。
                 test: /\.(png|jpg|gif)$/,
                 include: dirVarsConfig.srcRootDir,
-                loader: 'url?limit=8192&name=./static/img/[hash].[ext]',
+                loader: 'url-loader?limit=8192&name=./static/imgs/[hash].[ext]',
             },
             {
                 // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
@@ -50,12 +50,12 @@ var moduleConfig = {
                 include: dirVarsConfig.srcRootDir,
                 loader: 'file?name=./static/fonts/[name].[ext]',
             },
-            {
-                // 专供 DLL 解决方案使用，将编译出来的 dll 文件原封不动的拷贝到 build 中去
-                test: /\.js/,
-                include: dirVarsConfig.dllDir,
-                loader: 'file'
-            }
+            // {
+            //     // 专供 DLL 解决方案使用，将编译出来的 dll 文件原封不动的拷贝到 build 中去
+            //     test: /\.js/,
+            //     include: dirVarsConfig.dllDir,
+            //     loader: 'file'
+            // }
         ]
     }
 
