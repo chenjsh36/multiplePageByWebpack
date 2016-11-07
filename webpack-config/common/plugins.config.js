@@ -40,9 +40,9 @@ pageArr.forEach((page) => {
     const htmlPlugin = new HtmlWebpackPlugin({
         // title: `${page}`,
         filename: `${page}/main.html`,
-        template: path.resolve(dirVars.pagesDir, `./${page}/main.html`),
+        template: path.resolve(dirVars.pagesDir, `./${page}/main.jade`),
         // template: path.resolve(dirVars.pagesDir `./${page}/html.js`),
-        // chunks: [page, 'commons'],
+        chunks: [page, 'commons'], // 嵌入的文件，如果没有声明，会将所有提取出来的chunk和exact都放入到每个页面中
         // hash: true,
         // inject: 'body'
     });

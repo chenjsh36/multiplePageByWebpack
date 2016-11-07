@@ -24,13 +24,19 @@ var moduleConfig = {
             {
                 test: /\.less$/,
                 include: dirVarsConfig.srcRootDir,
-                loader: ExtractTextPlugin.extract(['style-loader', 'less'], 'css-loader?minimize!less'),
+                loader: ExtractTextPlugin.extract([], 'css-loader?minimize!less'),
             },
             {
                 test: /\.es6$/,
                 include: dirVarsConfig.srcRootDir,
                 loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
             },
+            {
+                test: /\.jade$/,
+                include: dirVarsConfig.srcRootDir,
+                // loader: 'jade-loader'
+                loader: 'pug'
+            }, 
             // {
             //     test: /\.html$/,
             //     include: dirVarsConfig.srcRootDir,
