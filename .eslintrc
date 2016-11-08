@@ -27,7 +27,7 @@
     "no-param-reassign": 0,
     "max-len": ["error", {
       "code": 200,
-      "tabWidth": 2,
+      "tabWidth": 4,
       "comments": 200,
       "ignoreComments": false,
       "ignoreTrailingComments": false,
@@ -39,6 +39,11 @@
       2,
       'LabeledStatement',
       'WithStatement',
-    ]
+    ],
+    "indent": ["error", "tab"],
+    "no-tabs": "off",
+    "comma-dangle": "off",
+    "semi": "off",
+    "eol-last": "off"
   }
 }

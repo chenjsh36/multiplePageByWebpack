@@ -7,10 +7,14 @@ var moduleConfig = {
                 test: /\.js$/,
                 loader: 'eslint', // 指定启用eslint-loader
                 include: dirVarsConfig.srcRootDir, // 指定审查范围仅为自己团队写的业务代码
-                exclude: [/bootstrap/], // 剔除掉不需要利用eslint审查的文件
+                exclude: [/bootstrap/, dirVarsConfig.dllDir], // 剔除掉不需要利用eslint审查的文件
             }
         ],
         loaders: [
+            {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
             {
                 test: require.resolve('jquery'), // 此loader配置项的目标是NPM中的jquery
                 loader: 'expose?$!expose?jQuery', // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`
@@ -29,7 +33,16 @@ var moduleConfig = {
             {
                 test: /\.es6$/,
                 include: dirVarsConfig.srcRootDir,
-                loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
+                loader: 'babel'
+                // loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
+            },
+            {
+                test: /\.js$/,
+                include: dirVarsConfig.srcRootDir,
+                exclude: dirVarsConfig.dllDir,
+                loader: 'babel'
+                // loader: 'babel?presets[]=es2015-loose'
+                // loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
             },
             {
                 test: /\.jade$/,
@@ -60,7 +73,7 @@ var moduleConfig = {
             //     // 专供 DLL 解决方案使用，将编译出来的 dll 文件原封不动的拷贝到 build 中去
             //     test: /\.js/,
             //     include: dirVarsConfig.dllDir,
-            //     loader: 'file-loader'
+            //     loader: 'file-loader?name=./[name].[ext]'
             // }
         ]
     }

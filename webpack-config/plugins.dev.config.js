@@ -8,4 +8,8 @@ pluginsConfig.push(new webpack.DefinePlugin({
 
 pluginsConfig.push(new webpack.HotModuleReplacementPlugin());
 
+pluginsConfig.push(new webpack.optimize.OccurenceOrderPlugin());
+
+pluginsConfig.push(new webpack.NoErrorsPlugin());
+
 module.exports = pluginsConfig;

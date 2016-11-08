@@ -1,1 +1,3 @@
-module.exports = 'hwllo';
+export default {
+	name: 'hahah'
+} 

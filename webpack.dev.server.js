@@ -4,9 +4,8 @@ var config = require('./webpack.dev.config.js');
 
 var entry = config.entry;
 for (var entryname in entry) {
-	entry[entryname].unshift("webpack-dev-server/client?http://localhost:8080/");
-
 	entry[entryname].unshift('webpack/hot/dev-server');
+	entry[entryname].unshift("webpack-dev-server/client?http://localhost:8080/");
 }
 
 console.log('devserver: ', config.entry);
@@ -55,19 +54,21 @@ var server = new WebpackDevServer(compiler, {
 	// Control the console log messages shown in the browser when using inline mode. Can be `error`, `warning`, `info` or `none`.
 
 	// webpack-dev-middleware options
-	// quiet: false,
-	// noInfo: false,
+	quiet: false,
+	noInfo: false,
 	lazy: true,
-	filename: "bundle.js",
+	// filename: "bundle.js",
+	filename: config.output.filename,
 	watchOptions: {
 	aggregateTimeout: 300,
 	poll: 1000
 	},
 	// It's a required option.
-	publicPath: "/assets/",
+	publicPath: config.output.publicPath,
 	// headers: { "X-Custom-Header": "yes" },
 	stats: { colors: true },
-	devtool: 'eval',
+	// devtool: 'eval',
+	devtool: 'cheap-module-eval-source-map',
 
 });
 server.listen(8080, "localhost", function(error, result){
