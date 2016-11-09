@@ -1,31 +1,28 @@
-<template>
-	<div id="app">
-		<p> welcome {{title}}</p>
-	</div>
+<template lang="html">
+<div id="app">
+    <div class="header"></div>
+    <div class="content">
+        <login-component></login-component>
+    </div>
+    <div class="footer"></div>
+</div>
 </template>
-
 <script>
-export default {
-	name: 'part',
-	data() {
-		return {
-			title: '海河大数据'
-		}
-	}
-}
-</script>
+    import ViewLogin from './ViewLogin/ViewLogin.vue'
+    
+    export default {
+        data() {
+            return {
+                name: 'hello'
+            }
+        }, 
+        components: {
+            'login-component': ViewLogin
+        }
 
-<style>
-#app {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
-}
- 
-body {
-	background-color: gray;
-}
+    }
+
+</script>
+<style lang="less" >
+
 </style>

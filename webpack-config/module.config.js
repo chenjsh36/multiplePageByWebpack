@@ -21,10 +21,15 @@ var moduleConfig = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules|bootstrap/,
-                // loader: 'css-loader?-minimize&autoprefixer'
-                loader: ExtractTextPlugin.extract(['style-loader'], 'css-loader?minimize'),
+                // exclude: /node_modules/, // 为了解析element的css文件注释掉了
+                loader: 'style!css'
             },
+            // {
+            //     test: /\.css$/,
+            //     exclude: /node_modules|bootstrap/,
+            //     // loader: 'css-loader?-minimize&autoprefixer'
+            //     loader: ExtractTextPlugin.extract(['style-loader'], 'css-loader?minimize'),
+            // },
             {
                 test: /\.less$/,
                 include: dirVarsConfig.srcRootDir,
@@ -64,11 +69,16 @@ var moduleConfig = {
                 loader: 'url-loader?limit=8192&name=./static/imgs/[hash].[ext]',
             },
             {
-                // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
-                test: /\.(woff|woff2|svg|eot|ttf)$/,
-                include: dirVarsConfig.srcRootDir,
-                loader: 'file-loader?name=./static/fonts/[name].[ext]',
+                // 专供element方案使用的
+                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/, 
+                loader: 'file'
             },
+            // {
+            //     // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
+            //     test: /\.(woff|woff2|svg|eot|ttf)$/,
+            //     include: dirVarsConfig.srcRootDir,
+            //     loader: 'file-loader?name=./static/fonts/[name].[ext]',
+            // },
             // {
             //     // 专供 DLL 解决方案使用，将编译出来的 dll 文件原封不动的拷贝到 build 中去
             //     test: /\.js/,
