@@ -41,7 +41,7 @@
       'WithStatement',
     ],
     "indent": ["error", "tab"],
-    "no-tabs": "off",
+    "no-tabs": 1, //  0 = off, 1 = warn, 2 = error
     "comma-dangle": "off",
     "semi": "off",
     "eol-last": "off"
