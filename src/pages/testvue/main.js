@@ -6,6 +6,7 @@ import './main.less'
 
 Vue.use(ElementUI)
 
+
 /* eslint-disable no-new */
 module.exports = new Vue({
     el: '#app',
