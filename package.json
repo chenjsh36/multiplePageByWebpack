@@ -5,16 +5,14 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node npm-scripts/clean-before-build.js && webpack --progress --colors --bail",
+    "display": "node npm-scripts/clean-before-build.js && webpack --progress --display --display-modules --colors --config ./webpack.dev.config.js",
+    "cp": "node npm-scripts/cp-dll.js",
+    "clean": "node npm-scripts/clean-before-build.js",
+    "build": "npm run dll && webpack --progress --colors --bail",
     "dev": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dev.config.js",
     "dll": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dll.config.js && node npm-scripts/cp-dll.js",
     "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
-    "start": "webpack-dev-server --inline --progress --compress --devtool cheap-module-eval-source-map --content-base build/",
-    "startdev": "node webpack.exserver.js",
-    "buildstart": "webpack --progress --colors --watch --config ./webpack.dev.config.js & node webpack.dev.server.js",
-    "display": "node npm-scripts/clean-before-build.js && webpack --progress --display --display-modules --colors --config ./webpack.dev.config.js",
-    "cp": "node npm-scripts/cp-dll.js",
-    "clean": "node npm-scripts/clean-before-build.js"
+    "startdev": "node webpack.exserver.js"
   },
   "repository": {
     "type": "git",
