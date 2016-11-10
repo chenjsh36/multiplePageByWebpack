@@ -57,6 +57,7 @@
     "url-loader": "^0.5.7",
     "vue": "^2.0.5",
     "vue-loader": "^9.8.1",
+    "vuex": "^2.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
@@ -65,6 +66,7 @@
   "dependencies": {
     "element-ui": "^1.0.0-rc.9",
     "jquery": "^3.1.1",
-    "vue": "^2.0.5"
+    "vue": "^2.0.5",
+    "vuex": "^2.0.0"
   }
 }
