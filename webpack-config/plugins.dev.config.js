@@ -5,4 +5,11 @@ pluginsConfig.push(new webpack.DefinePlugin({
   IS_PRODUCTION: false,
 }));
 
+
+pluginsConfig.push(new webpack.HotModuleReplacementPlugin());
+
+pluginsConfig.push(new webpack.optimize.OccurenceOrderPlugin());
+
+pluginsConfig.push(new webpack.NoErrorsPlugin());
+
 module.exports = pluginsConfig;

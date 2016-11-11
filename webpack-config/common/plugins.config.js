@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var dirVars = require('../base/dir-vars.config.js');
 var pageArr = require('../base/page-entries.config.js');
-
+var path = require('path');
 /* 抽取出所有通用的部分 */
 var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
   name: 'commons',      // 需要注意的是，chunk的name不能相同！！！
@@ -36,11 +36,15 @@ var pluginsConfig = [commonsChunkPlugin, providePlugin, extractTextPlugin, dllPl
 
 
 pageArr.forEach((page) => {
+    console.log('path:', page);
     const htmlPlugin = new HtmlWebpackPlugin({
+        // title: `${page}`,
         filename: `${page}/main.html`,
+        template: path.resolve(dirVars.pagesDir, `./${page}/main.jade`),
         // template: path.resolve(dirVars.pagesDir `./${page}/html.js`),
-        chunks: [page, 'commons'],
-        hash: true,
+        chunks: [page, 'commons'], // 嵌入的文件，如果没有声明，会将所有提取出来的chunk和exact都放入到每个页面中
+        // hash: true,
+        // inject: 'body'
     });
     pluginsConfig.push(htmlPlugin);
 })

@@ -11,7 +11,8 @@
     // in CommonJS
     //"node": true
     // in jQuery
-    "jquery": true
+    "jquery": true,
+    "es6": true
   },
   "rules": {
     "linebreak-style": 0, // 如果想启用的话这样设置：[1, "windows"] windows 的换行符为 CRLF(\r\n)， unix则为 LF(\r\n)
@@ -27,7 +28,7 @@
     "no-param-reassign": 0,
     "max-len": ["error", {
       "code": 200,
-      "tabWidth": 2,
+      "tabWidth": 4,
       "comments": 200,
       "ignoreComments": false,
       "ignoreTrailingComments": false,
@@ -39,6 +40,14 @@
       2,
       'LabeledStatement',
       'WithStatement',
-    ]
+    ],
+    "indent": [1, 4],
+    "no-tabs": 1, //  0 = off, 1 = warn, 2 = error
+    "comma-dangle": "off", // 不对数组或对象末尾逗号做强制要求
+    "semi": "off",
+    "eol-last": "off",
+    "no-plusplus": "off",
+    "no-unused-vars": "warn",
+
   }
 }

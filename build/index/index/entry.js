@@ -1,1 +1,0 @@
-webpackJsonp([0,1],[function(o,l,n){(function(o){n(3),console.log("hello wow"),o("body").html("hello world")}).call(l,n(1))},function(o,l,n){o.exports=n(2)(3)},function(o,l){o.exports=dll},function(o,l){}]);

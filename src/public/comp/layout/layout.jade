@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	include ../header/header.jade
+
+	block  header
+
+body
+	include ../test/test.jade
+	//- webpack会自动在这里放置每个页面的入口样式文件
+	block content 
+	block footer
+	//- 静态资源包脚本 dll.js, 放置第三方资源库，这类代码不经常修改，不需要webpack实时监听编译
+	script(src="../dll/dll.js")
+	//- webpack会在这后面添加公用代码和每个页面的入口脚本
+
+	
