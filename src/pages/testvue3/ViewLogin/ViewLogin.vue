@@ -28,9 +28,12 @@
                 </el-form-item>
             </el-form>                    
         </div>
+        <!-- 实时同步状态管理器的数据 -->
+        <!--         
         <ul class="todos" v-for="todo in toDos">
             <li>{{todo.id}} : {{todo.text}} : {{todo.done}}</li>
-        </ul>
+        </ul> 
+        -->
     </div>
 </template>
 <script>
@@ -134,12 +137,20 @@
             onSubmit() {
                 this.$refs.form.validate((valid) => {
                     if (valid) {
-                        alert('submit！');
-                        var _this = this;
-                        setTimeout(function(){
-                            _this.$store.commit('login');
-                            // _this.$store.dispatch('addToDos');
-                        }, 2000)
+                        setTimeout( () => {
+                            // 标记为已登录
+                            this.$store.commit('login');
+                            // 切换到数据管理平台
+                            this.$router.push({path: '/dataplatform'});
+                        }, 1000);
+                        // setTimeout(function(){
+                        //     window._this = _this;
+                        //     // 标记为已登录
+                        //     _this.$store.commit('login');
+                        //     // _this.$store.dispatch('addToDos');
+                        //     // 切换到数据管理平台
+                        //     _this.$router.push({ path: '/dataplatform', params: {}, query: {}});
+                        // }, 2000)
                     } else {
                         console.log('error before submit!');
                         return false;
