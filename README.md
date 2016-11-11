@@ -69,7 +69,7 @@
 * 加入 vuex 作 vue 状态管理器
 * 加入 vue-router 作 路由控制器
 * 加入 element 作为 vue 组件UI库
-* 
+
 
 
 ## 环境配置&运行项目
