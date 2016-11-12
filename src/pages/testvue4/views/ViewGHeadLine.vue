@@ -5,7 +5,7 @@
                 <el-tab-pane label="全网概况">
                     <div class="topic-graph" >
                         全网概况内容展示
-                        <div class="doc-num">
+                        <div class="doc-num" v-loading="docNumLoad">
                             
                         </div>
                     </div>
@@ -27,7 +27,8 @@
     export default {
         data() {
             return {
-                name: '.headline'
+                name: '.headline',
+                docNumLoad: false
             }
         },
         methods: {
@@ -39,23 +40,25 @@
             }
         },
         mounted: function() {
-            jQuery('.doc-num').attr('alt', 'asdf');
-            window.xxx = this;
-            let docNum = this.$el.querySelector('.doc-num');
-            let docNumC = echarts.init(docNum);
-            docNumC.setOption({
-                title: { text: 'ECharts 入门示例' },
-                tooltip: {},
-                xAxis: {
-                    data: ["11.11","11.12","11.13","11.14","11.15","11.16"]
-                },
-                yAxis: {},
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
-            });
+            this.$data.docNumLoad = true;
+            setTimeout(() => {
+                let docNum = this.$el.querySelector('.doc-num');
+                let docNumC = echarts.init(docNum);
+                docNumC.setOption({
+                    title: { text: 'ECharts 入门示例' },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["11.11","11.12","11.13","11.14","11.15","11.16"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '销量',
+                        type: 'bar',
+                        data: [5, 20, 36, 10, 10, 20]
+                    }]
+                });
+            }, 3000)
+
         }
 
     }
