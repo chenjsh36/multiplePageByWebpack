@@ -3,7 +3,8 @@
   "globals": {
     // Put things like jQuery, etc
     "jQuery": true,
-    "$": true
+    "$": true,
+    "echarts": true
   },
   "env": {
     // I write for browser

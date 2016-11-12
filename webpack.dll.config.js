@@ -15,6 +15,7 @@ module.exports = {
     */
     dll: [
       'jquery', 
+      'echarts'
       // '!!bootstrap-webpack!bootstrapConfig',
       // 'metisMenu/metisMenu.min', 
       // 'metisMenu/metisMenu.min.css',
@@ -32,6 +33,8 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       'window.$': 'jquery',
+      echarts: 'echarts',
+      'window.echarts': 'echarts'
     }),
     new ExtractTextPlugin('[name].css'), // 打包css/less的时候会用到ExtractTextPlugin
   ],

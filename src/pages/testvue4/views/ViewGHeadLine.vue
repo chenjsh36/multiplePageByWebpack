@@ -5,6 +5,9 @@
                 <el-tab-pane label="全网概况">
                     <div class="topic-graph" >
                         全网概况内容展示
+                        <div class="doc-num">
+                            
+                        </div>
                     </div>
                 </el-tab-pane>
                 <el-tab-pane label="详细舆情">
@@ -19,6 +22,8 @@
 </template>
 
 <script>
+    import echarts from 'echarts'
+
     export default {
         data() {
             return {
@@ -32,6 +37,25 @@
             handleRemove: function() {
                 console.log('clickxxx');
             }
+        },
+        mounted: function() {
+            jQuery('.doc-num').attr('alt', 'asdf');
+            window.xxx = this;
+            let docNum = this.$el.querySelector('.doc-num');
+            let docNumC = echarts.init(docNum);
+            docNumC.setOption({
+                title: { text: 'ECharts 入门示例' },
+                tooltip: {},
+                xAxis: {
+                    data: ["11.11","11.12","11.13","11.14","11.15","11.16"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
+                }]
+            });
         }
 
     }
@@ -55,6 +79,10 @@
         .topic-detail {
             position: relative;
             width: 100%;
+        }
+        .doc-num {
+            height: 300px;
+            width: 600px;
         }
     }
 </style>

@@ -64,6 +64,7 @@
     "webpack-hot-middleware": "^2.13.1"
   },
   "dependencies": {
+    "echarts": "^3.3.1",
     "element-ui": "^1.0.0-rc.9",
     "jquery": "^3.1.1",
     "vue": "^2.0.5",
