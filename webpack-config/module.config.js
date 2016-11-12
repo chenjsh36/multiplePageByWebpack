@@ -71,7 +71,7 @@ var moduleConfig = {
             {
                 // 专供element方案使用的
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/, 
-                loader: 'file'
+                loader: 'file?name=./static/fonts/[name].[ext]'
             },
             // {
             //     // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到

@@ -18,16 +18,16 @@ const store = new Vuex.Store({
             { id: 2, text: '...', done: false }]
     },
     // 公用函数
-    getters: {
-        toDosOfDone: (state, getters) => {
-            var dones = state.toDos.filter(todo => todo.done)
-            return dones;
-        },
-        // toDosCountDone: (state, getters) => {
-        //     return getters.toDosOfDone.length;
-        // }
-        toDosCountDone: (state, getters) => getters.toDosOfDone.length
-    },
+    // getters: {
+    //     toDosOfDone: (state, getters) => {
+    //         var dones = state.toDos.filter(todo => todo.done)
+    //         return dones;
+    //     },
+    //     // toDosCountDone: (state, getters) => {
+    //     //     return getters.toDosOfDone.length;
+    //     // }
+    //     toDosCountDone: (state, getters) => getters.toDosOfDone.length
+    // },
     // 事件触发(理论上只有mutation能修改state参数)
     // 注意：定义在mutations里面的事件必须都是同步的！否则无法对其进行跟踪
     mutations: {
@@ -72,7 +72,6 @@ const store = new Vuex.Store({
 })
 
 store.commit('increment');
-console.log(store.state.count, store.state.ifLogin);
 
 /* eslint-disable no-new */
 module.exports = new Vue({
