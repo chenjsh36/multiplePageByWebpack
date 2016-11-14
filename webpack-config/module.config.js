@@ -50,7 +50,7 @@ var moduleConfig = {
                 // loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
             },
             {
-                test: /\.jade$/,
+                test: /\.pug$/,
                 include: dirVarsConfig.srcRootDir,
                 // loader: 'jade-loader'
                 loader: 'pug'
