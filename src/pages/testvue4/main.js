@@ -1,4 +1,8 @@
 import Vue from 'vue'
+// 兼容 IE 没有 Promise 的问题导致 vuex 无法使用的问题
+import es6Promise from 'es6-promise'
+// 重写 dom.remove() 函数, 解决IE不支持这些方法
+// import fuckIE from './comp/fuckIE.js'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
@@ -9,6 +13,8 @@ import routerInit from './router'
 import vuexInit from './vuex/vuex'
 import './main.less'
 
+
+es6Promise.polyfill();
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(ElementUI)

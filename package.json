@@ -66,7 +66,8 @@
   },
   "dependencies": {
     "echarts": "^3.3.1",
-    "element-ui": "^1.0.0-rc.9",
+    "element-ui": "^1.0.0",
+    "es6-promise": "^4.0.5",
     "jquery": "^3.1.1",
     "vue": "^2.0.5",
     "vue-router": "^2.0.1",
