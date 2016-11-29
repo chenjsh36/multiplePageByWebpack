@@ -9,9 +9,9 @@
     "cp": "node npm-scripts/cp-dll.js",
     "clean": "node npm-scripts/clean-before-build.js",
     "build": "npm run dll && webpack --progress --colors --bail",
-    "dev": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dev.config.js",
+    "dev": "webpack --progress --colors --config ./webpack.dev.config.js",
     "dll": "node npm-scripts/clean-before-build.js && webpack --progress --colors --config ./webpack.dll.config.js && node npm-scripts/cp-dll.js",
-    "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
+    "watch": "webpack --progress --colors --watch --conigf ./webpack.dev.config.js",
     "startdev": "node webpack.exserver.js",
     "analysis": "webpack --config ./webpack.dev.config.js --profile --json > analysis.json"
   },
