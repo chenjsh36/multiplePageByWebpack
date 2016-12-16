@@ -20,7 +20,13 @@ body {
 	background-color: #fefefe;
 }
 
-
+.msg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100px;
+    width: auto;
+}
 .camera {
     width:200px;
     height:200px;
@@ -49,9 +55,9 @@ body {
     // -moz-transform-origin:center center -50px;
     // transform-origin:center center -50px;
 
-    -webkit-animation:s 18s linear infinite;
-    -moz-animation:s 18s linear infinite;
-    animation:s 18s linear infinite;
+    // -webkit-animation:s 18s linear infinite;
+    // -moz-animation:s 18s linear infinite;
+    // animation:s 18s linear infinite;
     // 
     transform: rotateX(0deg);
 }
@@ -170,8 +176,8 @@ body {
         height: @boxHeight*2;
         // margin-left: -@boxHeight;
         // margin-top: -@boxHeight;
-        margin-left: -2380px;
-        margin-top: -2594px;
+        margin-left: -2600px; // -2380px;
+        margin-top: -2750px; // -2594px;
         perspective: 420px;
         -moz-perspective: 420px;
         -webkit-perspective: 420px;
